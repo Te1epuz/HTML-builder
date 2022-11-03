@@ -14,10 +14,11 @@ stdout.write('Enter any text and press enter (exit to end):\n');
 stdin.on('data', updateFile);
 
 function updateFile(data) {
-  if (data.toString() === 'exit\r\n') {
+  if (data.toString().trim() === 'exit') {
     process.exit();
   }
   output.write(data);
+  stdout.write(`'${data.toString().trim()}' added to text.txt\n`);
 }
 process.on('SIGINT', function() {
   console.log("Caught interrupt signal");
