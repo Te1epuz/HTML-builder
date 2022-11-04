@@ -52,7 +52,6 @@ async function createStylesFile() {
   let files = await fs.promises.readdir(stylesPath, {withFileTypes: true})
   for (let file of files) {
     if (file.isFile() && path.extname(path.join(stylesPath, file.name)) === '.css') {
-
       let fileContent = await fs.promises.readFile(path.join(stylesPath, file.name), 'utf-8');
       stylesFileContent += fileContent;
     }

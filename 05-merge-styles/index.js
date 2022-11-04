@@ -20,3 +20,5 @@ fs.promises.readdir(stylesDirectoryPath, {withFileTypes: true})
       }
     })
   })
+
+// in final task this is much prettier :)
