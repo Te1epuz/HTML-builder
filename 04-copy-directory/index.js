@@ -32,7 +32,9 @@ function copyFiles() {
       files.forEach(file => {
         let sourceFile = path.join(directoryPath, file.name);
         let destFile = path.join(newDirectoryPath, file.name);
-        fs.promises.copyFile(sourceFile, destFile);
+        fs.copyFile(sourceFile, destFile, (err) => {
+          if (err) {console.log(err.message)}
+        });
       })
     })
 };
