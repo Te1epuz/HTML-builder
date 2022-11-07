@@ -9,7 +9,7 @@ fs.readdir(directoryPath, {withFileTypes: true}, (err, files) => {
     if (file.isFile()) {
       fs.stat(path.join(__dirname, 'secret-folder', file.name), (err, stat) => {
         if (err) {console.log(err.message)}
-        console.log(`${file.name.split('.')[0]} - ${file.name.split('.')[1]} - ${stat.size/1000}kb`)
+        console.log(`${file.name.split('.')[0]} - ${file.name.split('.')[1]} - ${(stat.size/1024).toFixed(3)}kb`)
       })
     }
   })
