@@ -16,7 +16,7 @@ async function copyFiles(folderPath, newFolderPath){
       let OldFolder = path.join(folderPath, file.name);
       let newFolder = path.join(newFolderPath, file.name);
       await fs.promises.mkdir(newFolder, { recursive: true });
-      await copyAssets(OldFolder, newFolder);
+      await copyFiles(OldFolder, newFolder);
     }
     else {
       let sourceFile = path.join(folderPath, file.name);
